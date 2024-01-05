@@ -4,3 +4,13 @@
 //     is similar to individual dishes
 //     Also provided are wine pairings, cheese pairings, and the like (with a little emoji of both offering you a recommendation to it)
 //         - One can cycle through these pairings if they are undesirable, but they are finite (and in future, all wines and cheeses can be added as ingredients and somehow paired that way)
+#ifndef CULINOIR_MENUPLANNER_H
+#define CULINOIR_MENUPLANNER_H
+
+
+class MenuPlanner {
+
+};
+
+
+#endif //CULINOIR_MENUPLANNER_H

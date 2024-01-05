@@ -8,11 +8,21 @@ ask user what they want:
 // */
 // #include <stdio.h>
 #include <iostream>
-#include "FoodTinder.h"
-#include "MenuPlanner.h"
-#include "DishSuggestor.h"
+#include "Planner/MenuPlanner.h"
+#include "Suggestor/DishSuggestor.h"
+#include "Tinder/FoodTinder.h"
+#include "Helper/Recipe.h"
+#include "Helper/RecipeReader.h"
+#include "Helper/Ingredient.h"
 
 int main() {
+    std::string filePath = "RecipeDatabase.csv";
+    std::vector<Recipe> recipes = RecipeReader::readRecipesFromCSV(filePath);
+
+    // Print the read recipes (for testing purposes)
+    for (const Recipe& recipe : recipes) {
+        recipe.getRecipe();
+    }
     int choice;
     std::cout << "Welcome to CuliNoir!" << std::endl;
     std::cout << "Choose an option:" << std::endl;
@@ -25,17 +35,14 @@ int main() {
     switch (choice) {
         case 1: {
             FoodTinder foodTinder;
-            foodTinder.run();
             break;
         }
         case 2: {
             MenuPlanner menuPlanner;
-            menuPlanner.run();
             break;
         }
         case 3: {
             DishSuggestor dishSuggestor;
-            dishSuggestor.run();
             break;
         }
         default:
